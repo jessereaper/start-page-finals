@@ -1,0 +1,108 @@
+.intro {
+  background-color: #F8F8FF;
+  background-image: url(back.jpg); }
+  .intro .plane-of-explanation {
+    background-color: white;
+    margin: 150px;
+    padding: 40px; }
+    .intro .plane-of-explanation .how-to {
+      padding: 20px;
+      color: black; }
+  .intro .future {
+    background-color: white;
+    margin: 150px;
+    padding: 40px; }
+  .intro h1, .intro h2 {
+    padding: 20px;
+    font-size: 20px;
+    font-style: bold; }
+  .intro h1 {
+    font-size: 30px; }
+  .intro p {
+    padding: 10px;
+    font-size: 15px; }
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+#mydiv {
+  position: absolute;
+  z-index: 9;
+  background-color: #f1f1f1;
+  text-align: center;
+  border: 1px solid #d3d3d3; }
+
+#mydiv2 {
+  position: absolute;
+  z-index: 9;
+  background-color: #f1f1f1;
+  text-align: center;
+  border: 1px solid #d3d3d3; }
+
+#mydiv3 {
+  position: absolute;
+  z-index: 9;
+  background-color: #f1f1f1;
+  text-align: center;
+  border: 1px solid #d3d3d3; }
+
+#mydivheader {
+  padding: 10px;
+  cursor: move;
+  z-index: 10;
+  background-color: #2196F3;
+  color: #fff; }
+
+#background {
+  height: 850px; }
+
+.button {
+  position: absolute;
+  top: 50px;
+  right: 50px; }
+
+/*# sourceMappingURL=style.css.map */
