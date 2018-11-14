@@ -2,6 +2,7 @@
 namespace jess\api;
 use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
+// use JeremyKendall\Password\PasswordValidator;
 require './vendor/autoload.php';
 
 class App{
@@ -25,9 +26,22 @@ class App{
     // ]));
 
     //Hash
-    //fix username = to equal a variable that is being called 
+    // fix username = to equal a variable that is being called
     // $pass = $this->db->query('SELECT * from users where username =')->fetch('password');
-    $hash = password_hash($pass, PASSWORD_DEFAULT);
+    // $hash = password_hash($pass, PASSWORD_DEFAULT);
+    //
+    //
+    // $hash = password_hash($plainTextPassword, PASSWORD_DEFAULT);
+    // $isValid = password_verify($plainTextPassword, $hashedPassword);
+    // $needsRehash = password_needs_rehash($hashedPassword, PASSWORD_DEFAULT);
+
+    // $validator = new PasswordValidator();
+    // $result = $validator->isValid($_POST['password'], $hashedPassword);
+    //
+    // if ($result->isValid()) {
+    // // password is valid
+    // }
+
 
 
     $container = $app->getContainer();

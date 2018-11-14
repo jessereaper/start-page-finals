@@ -69,33 +69,83 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-#mydiv {
-  position: absolute;
-  z-index: 9;
-  background-color: #f1f1f1;
-  text-align: center;
-  border: 1px solid #d3d3d3; }
-
-#mydiv2 {
-  position: absolute;
-  z-index: 9;
-  background-color: #f1f1f1;
-  text-align: center;
-  border: 1px solid #d3d3d3; }
-
-#mydiv3 {
-  position: absolute;
-  z-index: 9;
-  background-color: #f1f1f1;
-  text-align: center;
-  border: 1px solid #d3d3d3; }
-
 #mydivheader {
   padding: 10px;
   cursor: move;
   z-index: 10;
-  background-color: #2196F3;
-  color: #fff; }
+  background-color: transparent;
+  color: #fff;
+  top: 200px; }
+
+#weather_div {
+  position: fixed;
+  z-index: 9;
+  text-align: center;
+  border: 1px solid #d3d3d3;
+  top: 0px; }
+
+#searchbar_div {
+  position: fixed;
+  z-index: 9;
+  text-align: center;
+  bottom: 0px;
+  width: 500px;
+  transition: .3s border-color, .3s background-color, .3s border-bottom;
+  background-color: transparent;
+  border-color: transparent;
+  border: 0;
+  border-bottom: 5px solid;
+  color: var(--base-txt);
+  font-size: 70px;
+  outline: none;
+  padding: 0px;
+  z-index: 4;
+  width: 90%; }
+
+#clock_div {
+  position: fixed;
+  z-index: 9;
+  text-align: center;
+  border: 1px solid transparent;
+  bottom: 0px;
+  left: 195px; }
+
+#grid {
+  margin-left: -570px;
+  margin-top: -190px;
+  position: fixed;
+  width: 1140px;
+  height: 380px;
+  left: 60%;
+  top: 50%; }
+
+#grid table tr td a {
+  text-shadow: 0px 0px 0 rgba(200, 50, 50, 0.5), 0px 0px 0 rgba(50, 200, 150, 0.5);
+  box-shadow: 0px 0px 0 rgba(200, 50, 50, 0.5), 0px 0px 0 rgba(50, 200, 150, 0.5);
+  transition: .2s text-shadow, .2s box-shadow, .2s border-bottom;
+  border-bottom: 0px solid #c83232;
+  background-color: var(--background-alt);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  color: var(--base-txt);
+  box-sizing: border-box;
+  text-decoration: none;
+  position: relative;
+  display: block;
+  padding: 25px;
+  height: 100%;
+  width: 100%; }
+
+#grid table {
+  font-family: 'menlo', sans-serif;
+  border-collapse: separate;
+  border-spacing: 25px;
+  font-size: 12px; }
+
+:root {
+  --background-alt: #26221F;
+  --background: #211D1B;
+  --base-txt: #4D6358; }
 
 #background {
   height: 850px; }
@@ -104,5 +154,10 @@ table {
   position: absolute;
   top: 50px;
   right: 50px; }
+
+.button2 {
+  position: absolute;
+  top: 80px;
+  right: 100px; }
 
 /*# sourceMappingURL=style.css.map */

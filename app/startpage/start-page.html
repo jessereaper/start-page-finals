@@ -6,20 +6,114 @@
   <title>startpage</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="../css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body>
   <section id="background">
-    <div id="mydiv">
-      <div id="mydivheader">widget placeholder</div>
+    <div id="weather_div">
+      <div id="mydivheader">
+        <div id="openweathermap-widget-24"></div>
+        <script>
+          window.myWidgetParam ? window.myWidgetParam : window.myWidgetParam = [];
+          window.myWidgetParam.push({
+            id: 24,
+            cityid: '5364940',
+            appid: '81153cee917f41013a12ac2915c0b413',
+            units: 'imperial',
+            containerid: 'openweathermap-widget-24',
+          });
+          (function() {
+            var script = document.createElement('script');
+            script.async = true;
+            script.charset = "utf-8";
+            script.src = "http://openweathermap.org/themes/openweathermap/assets/vendor/owm/js/weather-widget-generator.js";
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(script, s);
+          })();
+        </script>
+      </div>
     </div>
-    <div id="mydiv2">
-      <div id="mydivheader">widget placeholder</div>
+    <div id="searchbar_div">
+      <div id="mydivheader">
+        <form class="" action="https://duckduckgo.com/" method="get">
+          <input type="text" name="q" id="search" placeholder="[space] to search">
+        </form>
+      </div>
     </div>
-    <div id="mydiv3">
-      <div id="mydivheader">widget placeholder</div>
+    <div id="clock_div">
+      <div id="mydivheader">
+        <span id="span"></span>
+      </div>
     </div>
     <button class="button" type="button" onclick="myFunction()">background</button>
+    <button type="button" class="button2" name="save">save</button>
+    <div id="grid">
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <a href="https://github.com/jessereaper" id="1" class="lBox">
+						<img src="src/gh.png">
+						<h3>GITHUB</h3>
+						<p>/jessereaper</p>
+					</a>
+            </td>
+            <td>
+              <a href="https://www.fb.com" id="2" class="lBox">
+						<img src="src/rc.png">
+						<h3>fb</h3>
+						<p>00f social</p>
+					</a>
+            </td>
+            <td>
+              <a href="https://www.youtube.com/" id="3" class="lBox">
+						<img src="src/yt.png">
+						<h3>YOUTUBE</h3>
+						<p>Videos about cats.</p>
+					</a>
+            </td>
+            <td>
+              <a href="https://twitter.com/" id="4" class="lBox">
+						<img src="">
+						<h3>TWITTER</h3>
+						<p>social hm</p>
+					</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="https://boards.4chan.org/anime/" id="5" class="lBox">
+						<img src="">
+						<h3>4CHAN</h3>
+						<p>people still use this :o</p>
+					</a>
+            </td>
+            <td>
+              <a href="https://reddit.com" id="6" class="lBox">
+						<img src="">
+						<h3>Reddit</h3>
+						<p>forums</p>
+					</a>
+            </td>
+            <td>
+              <a href="https://outlook.live.com/owa/" id="7" class="lBox">
+						<img src="">
+						<h3>HOTMAIL</h3>
+						<p>00f email</p>
+					</a>
+            </td>
+            <td>
+              <a href="" id="8" class="lBox">
+						<img src="">
+						<h3>placeholder</h3>
+						<p>placeholder</p>
+					</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </section>
   <script src="../public/script.js"></script>
 </body>
