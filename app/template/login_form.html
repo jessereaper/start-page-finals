@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 </head>
 <script src="../public/script.js"></script>
@@ -16,3 +16,76 @@
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+<html> -->
+
+<head>
+  <meta charset="utf-8">
+  <link href="login_style.css" type="text/css" rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <!-- <script type="text/javascript">
+    function do_login() {
+      var username = $("#username").val();
+      var pass = $("#password").val();
+      if (email != "" && pass != "") {
+        $("#loading_spinner").css({
+          "display": "block"
+        });
+        $.ajax({
+          type: 'post',
+          url: 'http://localhost:8088/api/users',
+          data: {
+            do_login: "do_login",
+            username: username,
+            password: pass
+          },
+          success: function(response) {
+            if (response == "success") {
+              window.location.href = "index.php";
+            } else {
+              $("#loading_spinner").css({
+                "display": "none"
+              });
+              alert("Wrong Details");
+            }
+          }
+        });
+      } else {
+        alert("Please Fill All The Details");
+      }
+
+      return false;
+    }
+  </script> -->
+  <script src="http://localhost:8088/app/public/auth.js"></script>
+</head>
+
+<body>
+  <form method="post">
+    <label>Login:</label>
+    <input type="text" name="username" required>
+    <br>
+    <label>Password:</label>
+    <input type="password" name="pass" required>
+    <br>
+    <input type="submit" value="Login" id="login_form">
+  </form>
+</body>
+<!-- <body>
+  <div id="wrapper">
+
+    <div id="login_form">
+      <h1>LOGIN FORM</h1>
+      <form method="post" action="../startpage/start-page.html" onsubmit="return do_login();">
+        <input type="text" name="username" id="username" placeholder="Enter username">
+        <br>
+        <input type="password" name="password" id="password" placeholder="***********">
+        <br>
+        <input type="submit" name="login" value="DO LOGIN" id="login_button">
+      </form>
+    </div>
+
+  </div>
+</body> -->
+
+
+</html>

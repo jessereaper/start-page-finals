@@ -2,13 +2,14 @@
     padding: 10px;
     cursor: move;
     z-index: 10;
-    background-color: transparent;
+    background-color: black;
     color: #fff;
     top: 200px;
 }
 #weather_div {
     position: fixed;
     z-index: 9;
+    background-color: #f1f1f1;
     text-align: center;
     border: 1px solid #d3d3d3;
     top: 0px;
@@ -21,7 +22,7 @@
     width: 500px;
     transition: .3s border-color, .3s background-color, .3s border-bottom;
     background-color: transparent;
-    border-color: transparent;
+    border-color: black;
     border: 0;
     border-bottom: 5px solid;
     color: var(--base-txt);
@@ -29,7 +30,7 @@
     outline: none;
     padding: 0px;
     z-index: 4;
-    width: 90%;
+    width: 53%;
 }
 #clock_div {
     position: fixed;
@@ -75,4 +76,8 @@
     --background-alt: #26221F;
     --background: #211D1B;
     --base-txt: #4D6358;
+}
+
+.black_text{
+  color: black;
 }

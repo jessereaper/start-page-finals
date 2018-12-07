@@ -14,9 +14,64 @@ class App{
     $config['db']['user']   = 'root';
     $config['db']['pass']   = 'root';
     $config['db']['dbname'] = 'usersdb';
+    $config['displayErrorDetails'] = true;
 
     $app = new \Slim\App(['settings' => $config]);
+
     //login
+
+    $app->get('/register', function(Request $request, Response $response, $args) {
+    return $this->view->render($response, 'register.latte', [
+        'message' => '',
+        'form' => [
+            'login' => ''
+        ]
+    ]);
+})->setName('register');
+
+    $app->post('/register', function(Request $request, Response $response, $args) {
+    $tplVars = [
+        'message' => '',
+        'form' => [
+            'login' => ''
+        ]
+    ];
+    $input = $request->getParsedBody();
+    if(!empty($input['username'] && !empty($input['pass1']) && !empty($input['pass2']))) {
+        if($input['pass1'] == $input['pass2']) {
+            try {
+                //prepare hash
+                $pass = password_hash($input['pass1'], PASSWORD_DEFAULT);
+                //insert data into database
+                $stmt = $this->db->prepare('INSERT INTO users (username, password, name) VALUES (:l, :p, :n)');
+                $stmt->bindValue(':l', $input['username']);
+                $stmt->bindValue(':p', $pass);
+                $stmt->bindValue(':n', $input['name']);
+                $stmt->execute();
+                //redirect to login page
+                // return $response->withHeader('Location', $this->router->pathFor('login_form.html'));
+                // exit;
+            } catch (PDOException $e) {
+                $this->logger->error($e->getMessage());
+                $tplVars['message'] = 'Database error.';
+                var_dump('error');
+                $tplVars['form'] = $input;
+            }
+        } else {
+            $tplVars['message'] = 'Provided passwords do not match.';
+            $tplVars['form'] = $input;
+        }
+    }
+    return $response;
+    // return $this->view->render($response, 'login_form.html', $tplVars);
+// })->setName('do-register');
+});
+
+$app->get('/login_form.html', function(Request $request, Response $response, $args) {
+    return $this->view->render($response, 'login_form.html', ['message' => '']);
+})->setName('login');
+
+
     // $app->add(new Tuupola\Middleware\HttpBasicAuthentication([
     //     "path" => "/admin",
     //     "realm" => "Protected",
@@ -24,6 +79,25 @@ class App{
     //         $
     //     }
     // ]));
+    // if(isset($_POST['do_login'])){
+    //   $host="localhost";
+    //   $username="root";
+    //   $password="";
+    //   $databasename="usersdb";
+    //   $connect=mysql_connect($host,$username,$password);
+    //   $db=mysql_select_db($usersdb);
+    //
+    //   $username=$_POST['username'];
+    //   $pass=$_POST['password'];
+    //   $select_data=mysql_query("select * from user where email='$username' and password='$pass'");
+    //     if($row=mysql_fetch_array($select_data)){
+    //       $_SESSION['username']=$row['username']; echo "success";
+    //     }
+    //     else{
+    //       echo "fail";
+    //     }
+    //     exit();
+    // }
 
     //Hash
     // fix username = to equal a variable that is being called
@@ -102,6 +176,23 @@ class App{
     //   }
     //   return $response;
     // });
+    $app->post('/users_verify',function (Request $request, Response $response){
+      $password = password_hash(($POST['password']));
+      $users = ($POST['username']);
+      $input = $request->getParsedBody();
+      $sth = $this->db->prepare("SELECT * FROM users WHERE
+        username='".$users."'" AND password="");
+      $result = $sth->execute();
+
+      $row_cnt = $result->num_rows;
+        if ($row_cnt>0){
+          return $this->response->withJson(array("ok"=>"ya logged in your going places kid"));
+
+    }else{
+      return $this->response->withJson(array("oh no"=>"big  y i k e s "));
+
+    }
+    });
     $app->post('/users', function (Request $request, Response $response) {
         $this->logger->addInfo("POST /users/");
 

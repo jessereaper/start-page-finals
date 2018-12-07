@@ -73,13 +73,14 @@ table {
   padding: 10px;
   cursor: move;
   z-index: 10;
-  background-color: transparent;
+  background-color: black;
   color: #fff;
   top: 200px; }
 
 #weather_div {
   position: fixed;
   z-index: 9;
+  background-color: #f1f1f1;
   text-align: center;
   border: 1px solid #d3d3d3;
   top: 0px; }
@@ -92,7 +93,7 @@ table {
   width: 500px;
   transition: .3s border-color, .3s background-color, .3s border-bottom;
   background-color: transparent;
-  border-color: transparent;
+  border-color: black;
   border: 0;
   border-bottom: 5px solid;
   color: var(--base-txt);
@@ -100,7 +101,7 @@ table {
   outline: none;
   padding: 0px;
   z-index: 4;
-  width: 90%; }
+  width: 53%; }
 
 #clock_div {
   position: fixed;
@@ -147,8 +148,12 @@ table {
   --background: #211D1B;
   --base-txt: #4D6358; }
 
+.black_text {
+  color: black; }
+
 #background {
-  height: 850px; }
+  height: 850px;
+  overflow: hidden; }
 
 .button {
   position: absolute;
@@ -159,5 +164,66 @@ table {
   position: absolute;
   top: 80px;
   right: 100px; }
+
+#wrapper {
+  margin: 0 auto;
+  padding: 0px;
+  text-align: center;
+  width: 995px; }
+
+#wrapper h1 {
+  margin-top: 50px;
+  font-size: 45px;
+  color: #0B2161; }
+
+#wrapper h1 a {
+  color: #0B2161;
+  font-size: 18px; }
+
+#wrapper h2 input[type="submit"] {
+  background: none;
+  border: none;
+  text-decoration: underline;
+  font-size: 17px; }
+
+#login_form {
+  background-color: white;
+  width: 350px;
+  padding: 20px;
+  box-sizing: border-box;
+  margin-left: 320px;
+  box-shadow: 0px 0px 10px 0px #2E64FE; }
+
+#login_form h1 {
+  text-align: center;
+  margin: 0px;
+  color: #0B2161;
+  font-size: 27px;
+  margin-bottom: 20px; }
+
+#login_form #login_label {
+  color: #0B2161; }
+
+#login_form input[type="text"], input[type="password"] {
+  width: 250px;
+  height: 40px;
+  padding-left: 5px;
+  margin: 5px;
+  border-radius: 2px;
+  border: 1px solid #2E64FE; }
+
+#login_form input[type="submit"] {
+  background-color: #2E64FE;
+  color: white;
+  border: none;
+  border-bottom: 3px solid #0040FF;
+  width: 250px;
+  height: 45px;
+  border-radius: 2px;
+  margin-left: -4px;
+  margin-top: 5px; }
+
+#login_form #loading_spinner {
+  display: none; }
 
 /*# sourceMappingURL=style.css.map */

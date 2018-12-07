@@ -141,3 +141,7 @@
 [2018-11-14 15:34:16] my_logger.INFO: get /users [] []
 [2018-11-14 15:34:20] my_logger.INFO: get /users [] []
 [2018-11-14 15:34:49] my_logger.INFO: get /users1 [] []
+[2018-11-14 15:48:06] my_logger.INFO: get /users1 [] []
+[2018-11-14 16:13:15] my_logger.INFO: get /users [] []
+[2018-11-30 15:19:49] my_logger.INFO: get /users [] []
+[2018-11-30 15:20:24] my_logger.INFO: POST /users/ [] []

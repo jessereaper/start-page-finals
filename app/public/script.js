@@ -1,76 +1,4 @@
 //button function wraper on this part and have a button to save the elements
-dragElement(document.getElementById("weather_div"));
-
-function dragElement(elmnt) {
-  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-  if (document.getElementById(elmnt.id + "header")) {
-    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
-  } else {
-    elmnt.onmousedown = dragMouseDown;
-  }
-
-  function dragMouseDown(e) {
-    e = e || window.event;
-    e.preventDefault();
-    pos3 = e.clientX;
-    pos4 = e.clientY;
-    document.onmouseup = closeDragElement;
-    document.onmousemove = elementDrag;
-  }
-
-  function elementDrag(e) {
-    e = e || window.event;
-    e.preventDefault();
-    pos1 = pos3 - e.clientX;
-    pos2 = pos4 - e.clientY;
-    pos3 = e.clientX;
-    pos4 = e.clientY;
-    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
-  }
-
-  function closeDragElement() {
-    document.onmouseup = null;
-    document.onmousemove = null;
-  }
-}
-dragElement(document.getElementById("searchbar_div"));
-
-function dragElement(elmnt) {
-  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-  if (document.getElementById(elmnt.id + "header")) {
-    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
-  } else {
-    elmnt.onmousedown = dragMouseDown;
-  }
-
-  function dragMouseDown(e) {
-    e = e || window.event;
-    e.preventDefault();
-    pos3 = e.clientX;
-    pos4 = e.clientY;
-    document.onmouseup = closeDragElement;
-    document.onmousemove = elementDrag;
-  }
-
-  function elementDrag(e) {
-    e = e || window.event;
-    e.preventDefault();
-    pos1 = pos3 - e.clientX;
-    pos2 = pos4 - e.clientY;
-    pos3 = e.clientX;
-    pos4 = e.clientY;
-    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
-  }
-
-  function closeDragElement() {
-    document.onmouseup = null;
-    document.onmousemove = null;
-  }
-}
-dragElement(document.getElementById("clock_div"));
-
 function dragElement(elmnt) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
   if (document.getElementById(elmnt.id + "header")) {
@@ -105,56 +33,45 @@ function dragElement(elmnt) {
   }
 }
 
+var weather_div = document.getElementById("weather_div");
+
+if (weather_div){
+  dragElement(weather_div)
+}
+
+var searchbar_div = document.getElementById("searchbar_div");
+
+if (searchbar_div){
+  dragElement(searchbar_div)
+}
+
+var clock_div = document.getElementById("clock_div");
+
+if (clock_div){
+  dragElement(clock_div)
+}
+
+
+// dragElement(document.getElementById("weather_div"));
+//
+// dragElement(document.getElementById("searchbar_div"));
+//
+// dragElement(document.getElementById("clock_div"));
+
+//button
   $(".button2").click(function(){
-        alert("positions = " + $("mydiv").css("top","left"));
-        console.log()
+        console.log(document.getElementById("weather_div").style.top)
+        console.log(document.getElementById("searchbar_div").style.left)
+        console.log(document.getElementById("searchbar_div").style.top)
+        console.log(document.getElementById("clock_div").style.left)
+        console.log(document.getElementById("clock_div").style.top)
+        console.log(document.getElementById("clock_div").style.left)
+
     });
 
 function myFunction() {
     document.getElementById("background").style.backgroundImage = "url('demo.gif')";
 }
-
-
-//auth
-$(document).ready(function() {
-  $("#login_Form").submit(function(event) {
-    var form = $(this);
-    event.preventDefault();
-    $.ajax({
-      type: "POST",
-      url: "http://localhost:8088/api/users",
-      data: form.serialize(), // serializes the form's elements.
-      success: function(data) {
-        window.location.replace("http://localhost:8088/app/template/users");
-      }
-    });
-  });
-  $("#sign_up").submit(function(event) {
-    var form = $(this);
-    event.preventDefault();
-    $.ajax({
-      type: "POST",
-      url: "http://localhost:8088/api/users/" + id,
-      data: form.serialize(), // serializes the form's elements.
-      success: function(data) {
-        window.location.replace("http://localhost:8088/app/template/users");
-      }
-    });
-  });
-});
-$(document).ready(function() {
-  $("#users").submit(function(event) {
-    var form = $(this);
-    event.preventDefault();
-    $.ajax({
-      type: "POST",
-      url: "http://localhost:8088/api/users",
-      data: form.serialize(), // serializes the form's elements.
-      success: function(data) {
-        window.location.replace("http://localhost:8081/app/users");
-      }
-    });
-  });
 
 
 //searchbar
@@ -183,15 +100,15 @@ document.getElementById("search").onfocus = function(){ // Focusing search bar
 	document.getElementById("liveClock").style.color = "#60B48A";
 };
 
-function helpToggle(){ // Toggle instructions opacity to show/hide
-	if ( document.getElementById("instructions").style.opacity < .9 ) {
-		document.getElementById("instructions").style.opacity = .9;
-		document.getElementById("instructionsToggle").style.opacity = 1;
-	} else {
-		document.getElementById("instructions").style.opacity = 0;
-		document.getElementById("instructionsToggle").style.opacity = '';
-	}
-};
+// function helpToggle(){ // Toggle instructions opacity to show/hide
+// 	if ( document.getElementById("instructions").style.opacity < .9 ) {
+// 		document.getElementById("instructions").style.opacity = .9;
+// 		document.getElementById("instructionsToggle").style.opacity = 1;
+// 	} else {
+// 		document.getElementById("instructions").style.opacity = 0;
+// 		document.getElementById("instructionsToggle").style.opacity = '';
+// 	}
+// };
 
 document.onkeydown = function(e) {
 
@@ -271,7 +188,7 @@ document.onkeydown = function(e) {
 };
 
 // clock
-var span = document.getElementById('span');
+var span = document.getElementById('time');
 
 function time() {
   var d = new Date();
@@ -279,8 +196,7 @@ function time() {
   var m = d.getMinutes();
   var h = d.getHours();
   span.textContent = h + ":" + m + ":" + s;
+
 };
-
+  setInterval(time, 1000)
 })
-
-setInterval(time, 1000)
