@@ -188,15 +188,18 @@ document.onkeydown = function(e) {
 };
 
 // clock
-var span = document.getElementById('time');
+$(document).ready(function(){
+  var span = document.getElementById('time');
 
-function time() {
-  var d = new Date();
-  var s = d.getSeconds();
-  var m = d.getMinutes();
-  var h = d.getHours();
-  span.textContent = h + ":" + m + ":" + s;
+  function time() {
+    var d = new Date();
+    var s = d.getSeconds();
+    var m = d.getMinutes();
+    var h = d.getHours();
+    span.textContent = h + ":" + m + ":" + s;
 
-};
-  setInterval(time, 1000)
-})
+  };
+    setInterval(time, 1000)
+
+  
+});

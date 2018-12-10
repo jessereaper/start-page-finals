@@ -177,19 +177,29 @@ $app->get('/login_form.html', function(Request $request, Response $response, $ar
     //   return $response;
     // });
     $app->post('/users_verify',function (Request $request, Response $response){
-      $password = password_hash(($POST['password']));
-      $users = ($POST['username']);
+      $parsedBody = $request->getParsedBody();
+      // $pass = password_hash($parsedBody['pass'],PASSWORD_DEFAULT);
+      $users = trim($parsedBody['username']);
       $input = $request->getParsedBody();
-      $sth = $this->db->prepare("SELECT * FROM users WHERE
-        username='".$users."'" AND password="");
-      $result = $sth->execute();
-
-      $row_cnt = $result->num_rows;
-        if ($row_cnt>0){
-          return $this->response->withJson(array("ok"=>"ya logged in your going places kid"));
-
-    }else{
-      return $this->response->withJson(array("oh no"=>"big  y i k e s "));
+      $sth = $this->db->prepare("SELECT * FROM users WHERE username='".$users."';");
+      $sth->execute();
+      $result = $sth->fetch();
+      // $row_cnt = $result->num_rows;
+      // $user = $result->fetch_all();
+      if (password_verify($parsedBody['pass'],$result['password'])){
+        $unique_value = uniqid();
+        $sth = $this->db->prepare("UPDATE users SET token='".$unique_value."' WHERE username='".$users."';");
+        $sth->execute();
+         return $this->response->withJson(array("token"=>$unique_value));
+      }
+    //     if ($row_cnt>0){
+    //       return $this->response->withJson(array("ok"=>"ya logged in your going places kid"));
+    //   // $token =
+    //
+    // }
+        else{
+          // return $this->response->withJson(array("oh no"=>"big  y i k e s "));
+          return $response->withStatus(402)->withJson(password_hash($parsedBody['pass'], PASSWORD_DEFAULT));
 
     }
     });
@@ -293,6 +303,7 @@ $app->get('/login_form.html', function(Request $request, Response $response, $ar
       //on error
       return $response;
     });
+    $app->GET('/settings/{}')
 
     $this->app = $app;
     }

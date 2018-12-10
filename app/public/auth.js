@@ -1,7 +1,8 @@
 //auth
 
 $(document).ready(function() {
-  $("#login_Form").submit(function(event) {
+  $("#login_form").submit(function(event) {
+    console.log("something");
     var form = $(this);
     event.preventDefault();
     $.ajax({
@@ -9,7 +10,10 @@ $(document).ready(function() {
       url: "http://localhost:8088/api/users_verify",
       data: form.serialize(), // serializes the form's elements.
       success: function(data) {
-        window.location.replace("http://localhost:8088/app/start-page.html.");
+        console.log(data)
+        data['token']
+        document.cookie = "start_page_token=" + data['token'];
+        window.location.replace("http://localhost:8088/app/startpage/start-page.html");
       }
     });
   });
@@ -40,3 +44,5 @@ $(document).ready(function() {
     });
   });
 });
+
+//user ineractions
