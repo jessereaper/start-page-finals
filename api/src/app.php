@@ -10,10 +10,10 @@ class App{
   private $app;
   public function __construct($db) {
 
-    $config['db']['host']   = 'us-cdbr-iron-east-01.cleardb.net/heroku_7aad071f8676a9f?reconnect=true';
+    $config['db']['host']   = 'us-cdbr-iron-east-01.cleardb.net';
     $config['db']['user']   = 'bb221fb79904d2';
     $config['db']['pass']   = '11c81901';
-    $config['db']['dbname'] = 'usersdb';
+    $config['db']['dbname'] = 'heroku_7aad071f8676a9f';
     $config['displayErrorDetails'] = true;
 
     $app = new \Slim\App(['settings' => $config]);
