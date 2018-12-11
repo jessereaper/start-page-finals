@@ -1,5 +1,5 @@
 <?php
-namespace jess\api;
+namespace api;
 use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
 // use JeremyKendall\Password\PasswordValidator;
