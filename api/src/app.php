@@ -303,7 +303,7 @@ $app->get('/login_form.html', function(Request $request, Response $response, $ar
       //on error
       return $response;
     });
-    $app->GET('/settings/{}')
+    $app->GET('/settings/{user}')
 
     $this->app = $app;
     }
