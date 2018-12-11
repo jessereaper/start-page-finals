@@ -305,8 +305,8 @@ $app->get('/login_form.html', function(Request $request, Response $response, $ar
     });
     // $app->GET('/settings/{user}')
     //
-    // $this->app = $app;
-    // }
+    $this->app = $app;
+    }
 
     /**
     * Get an instance of the application.
