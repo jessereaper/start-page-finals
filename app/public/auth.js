@@ -7,13 +7,13 @@ $(document).ready(function() {
     event.preventDefault();
     $.ajax({
       type: "POST",
-      url: "http://localhost:8088/api/users_verify",
+      url: "http://start-page-maker.herokuapp.com/api/users_verify",
       data: form.serialize(), // serializes the form's elements.
       success: function(data) {
         console.log(data)
         data['token']
         document.cookie = "start_page_token=" + data['token'];
-        window.location.replace("http://localhost:8088/app/startpage/start-page.html");
+        window.location.replace("http://start-page-maker.herokuapp.com/app/startpage/start-page.html");
       }
     });
   });
@@ -22,10 +22,10 @@ $(document).ready(function() {
     event.preventDefault();
     $.ajax({
       type: "POST",
-      url: "http://localhost:8088/api/register" ,
+      url: "http://start-page-maker.herokuapp.com/api/register" ,
       data: form.serialize(), // serializes the form's elements.
       success: function(data) {
-        window.location.replace("http://localhost:8088/app/template/login_form.html");
+        window.location.replace("http://start-page-maker.herokuapp.com/app/template/login_form.html");
       }
     });
   });
@@ -36,10 +36,10 @@ $(document).ready(function() {
     event.preventDefault();
     $.ajax({
       type: "POST",
-      url: "http://localhost:8088/api/users",
+      url: "http://start-page-maker.herokuapp.com/api/users",
       data: form.serialize(), // serializes the form's elements.
       success: function(data) {
-        window.location.replace("http://localhost:8081/app/users");
+        window.location.replace("http://start-page-maker.herokuapp.com/app/users");
       }
     });
   });
