@@ -10,6 +10,7 @@ $db = function ($c) {
     return $pdo;
 };
 //this is the name space
-$app = (new jess\api\App($db))->get();
+include 'src/app.php';
+$app = (new App($db))->get();
 //this runs the app xD
 $app->run();
