@@ -83,13 +83,15 @@ table {
   background-color: #f1f1f1;
   text-align: center;
   border: 1px solid #d3d3d3;
-  top: 0px; }
+  top: 635px;
+  left: 1191px; }
 
 #searchbar_div {
   position: fixed;
   z-index: 9;
   text-align: center;
   bottom: 0px;
+  left: 309px;
   width: 500px;
   transition: .3s border-color, .3s background-color, .3s border-bottom;
   background-color: transparent;
@@ -108,8 +110,8 @@ table {
   z-index: 9;
   text-align: center;
   border: 1px solid transparent;
-  bottom: 0px;
-  left: 195px; }
+  top: 51px;
+  left: 29px; }
 
 #grid {
   margin-left: -570px;
