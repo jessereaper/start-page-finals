@@ -167,6 +167,10 @@ table {
   top: 80px;
   right: 100px; }
 
+.dont-break-please {
+  background: #020024;
+  background: linear-gradient(90deg, #020024 0%, #793c09 52%, #ffd300 100%); }
+
 #wrapper {
   margin: 0 auto;
   padding: 0px;
