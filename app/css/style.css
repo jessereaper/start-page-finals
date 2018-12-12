@@ -227,12 +227,15 @@ table {
 #login_form #loading_spinner {
   display: none; }
 
-.register_form_css {
-  margin-left: 550px;
-  margin-top: 300px;
-  width: 350px;
-  padding: 20px;
-  box-sizing: border-box;
-  box-shadow: 0px 0px 10px 0px #2E64FE; }
+.body {
+  background: #3f5efb;
+  background: radial-gradient(circle, #3f5efb 14%, #fc8d46 100%); }
+  .body .register_form_css {
+    margin-left: 550px;
+    margin-top: 300px;
+    width: 350px;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 10px 0px #ffa500; }
 
 /*# sourceMappingURL=style.css.map */
