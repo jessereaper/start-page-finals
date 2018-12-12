@@ -38,8 +38,8 @@
  width:350px;
  padding:20px;
  box-sizing:border-box;
- margin-left:320px;
- margin-top: 200px;
+ margin-left: 550px;
+ margin-top: 300px;
  box-shadow:0px 0px 10px 0px #2E64FE;
 }
 #login_form h1
@@ -78,4 +78,8 @@
 #login_form #loading_spinner
 {
  display:none;
+}
+.body2{
+  background: rgb(251,153,63);
+background: radial-gradient(circle, rgba(251,153,63,1) 14%, rgba(70,130,252,1) 100%);
 }

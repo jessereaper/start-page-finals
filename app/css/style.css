@@ -191,8 +191,8 @@ table {
   width: 350px;
   padding: 20px;
   box-sizing: border-box;
-  margin-left: 320px;
-  margin-top: 200px;
+  margin-left: 550px;
+  margin-top: 300px;
   box-shadow: 0px 0px 10px 0px #2E64FE; }
 
 #login_form h1 {
@@ -227,15 +227,23 @@ table {
 #login_form #loading_spinner {
   display: none; }
 
+.body2 {
+  background: #fb993f;
+  background: radial-gradient(circle, #fb993f 14%, #4682fc 100%); }
+
 .body {
   background: #3f5efb;
   background: radial-gradient(circle, #3f5efb 14%, #fc8d46 100%); }
   .body .register_form_css {
+    background-color: white;
     margin-left: 550px;
     margin-top: 300px;
     width: 350px;
     padding: 20px;
     box-sizing: border-box;
     box-shadow: 0px 0px 10px 0px #ffa500; }
+    .body .register_form_css .text_box_css {
+      width: 15px;
+      height: 5px; }
 
 /*# sourceMappingURL=style.css.map */

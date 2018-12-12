@@ -2,6 +2,7 @@
   background: rgb(63,94,251);
   background: radial-gradient(circle, rgba(63,94,251,1) 14%, rgba(252,141,70,1) 100%);
   .register_form_css{
+    background-color: white;
     margin-left: 550px;
     margin-top: 300px;
     width: 350px;
@@ -9,6 +10,8 @@
     box-sizing: border-box;
     box-shadow: 0px 0px 10px 0px #ffa500;
     .text_box_css{
+      width: 15px;
+      height: 5px;
     }
   }
 }
