@@ -303,8 +303,17 @@ $app->get('/login_form.html', function(Request $request, Response $response, $ar
       //on error
       return $response;
     });
-    // $app->GET('/settings/{user}')
+    // $app->post('/settings/{users}', function(Request $request, Response $response, $args){
+    //   if(!empty($input['widget'] && !empty($input['top'] && !empty($input['left'])))){
+    //     try{
+    //       $stmt = $this->db->prepare('INSERT INTO user_widget ()')
+    //     }
+    //   }
+    // });
+    // $app->GET('/settings/{users}'){
     //
+    // }
+
     $this->app = $app;
     }
 

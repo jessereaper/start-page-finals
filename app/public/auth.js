@@ -30,6 +30,23 @@ $(document).ready(function() {
 //     });
 //   });
 // });
+// $("#settings").submit(function(event)){
+//   event.preventDefault();
+//   $.ajax({
+//     type:"GET",
+//     url: "https://start-page-maker.herokuapp.com/api/settings" + start_page_token,
+//     data: orm.serialize(), // serializes the form's elements.
+//     success: $(".button2").click(function(){
+//           console.log(document.getElementById("weather_div").style.top)
+//           console.log(document.getElementById("searchbar_div").style.left)
+//           console.log(document.getElementById("searchbar_div").style.top)
+//           console.log(document.getElementById("clock_div").style.left)
+//           console.log(document.getElementById("clock_div").style.top)
+//           console.log(document.getElementById("clock_div").style.left)
+//
+//       });
+//   })
+// }
 $("#sign_up").submit(function(event) {
   var form = $(this);
   event.preventDefault();

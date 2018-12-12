@@ -192,6 +192,7 @@ table {
   padding: 20px;
   box-sizing: border-box;
   margin-left: 320px;
+  margin-top: 200px;
   box-shadow: 0px 0px 10px 0px #2E64FE; }
 
 #login_form h1 {
@@ -225,5 +226,9 @@ table {
 
 #login_form #loading_spinner {
   display: none; }
+
+.register_form_css {
+  margin-left: 320px;
+  margin-top: 200px; }
 
 /*# sourceMappingURL=style.css.map */

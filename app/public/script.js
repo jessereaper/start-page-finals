@@ -59,16 +59,32 @@ if (clock_div){
 // dragElement(document.getElementById("clock_div"));
 
 //button
-  $(".button2").click(function(){
-        console.log(document.getElementById("weather_div").style.top)
-        console.log(document.getElementById("searchbar_div").style.left)
-        console.log(document.getElementById("searchbar_div").style.top)
-        console.log(document.getElementById("clock_div").style.left)
-        console.log(document.getElementById("clock_div").style.top)
-        console.log(document.getElementById("clock_div").style.left)
-
-    });
-
+  // $(".button2").click(function(){
+  //       console.log(document.getElementById("weather_div").style.top)
+  //       console.log(document.getElementById("searchbar_div").style.left)
+  //       console.log(document.getElementById("searchbar_div").style.top)
+  //       console.log(document.getElementById("clock_div").style.left)
+  //       console.log(document.getElementById("clock_div").style.top)
+  //       console.log(document.getElementById("clock_div").style.left)
+  //
+  //   });
+  // $("#settings").submit(function(event)){
+  //   event.preventDefault();
+  //   $.ajax({
+  //     type:"GET",
+  //     url: "https://start-page-maker.herokuapp.com/api/settings" + start_page_token,
+  //     data: orm.serialize(), // serializes the form's elements.
+  //     success: $(".button2").click(function(){
+  //           console.log(document.getElementById("weather_div").style.top)
+  //           console.log(document.getElementById("searchbar_div").style.left)
+  //           console.log(document.getElementById("searchbar_div").style.top)
+  //           console.log(document.getElementById("clock_div").style.left)
+  //           console.log(document.getElementById("clock_div").style.top)
+  //           console.log(document.getElementById("clock_div").style.left)
+  //
+  //       });
+  //   });
+  // };
 function myFunction() {
     document.getElementById("background").style.backgroundImage = "url('demo.gif')";
 }
@@ -201,5 +217,5 @@ $(document).ready(function(){
   };
     setInterval(time, 1000)
 
-  
+
 });
