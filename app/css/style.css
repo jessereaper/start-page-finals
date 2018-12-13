@@ -237,6 +237,9 @@ table {
   background: #fb993f;
   background: radial-gradient(circle, #fb993f 14%, #4682fc 100%); }
 
+.log_redirect {
+  margin-left: 160px; }
+
 .body {
   background: #3f5efb;
   background: radial-gradient(circle, #3f5efb 14%, #fc8d46 100%); }
@@ -252,5 +255,8 @@ table {
       width: 100px;
       height: 25px;
       padding: 5px; }
+
+.register_redirect {
+  margin-left: 10px; }
 
 /*# sourceMappingURL=style.css.map */

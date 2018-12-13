@@ -156,7 +156,6 @@ document.onkeydown = function(e) {
 		 *                  [a/<] [s/v] [d/>]   <---- Move between blocks
 		 *                  [     space     ]   <---- Focus search
 		 *
-		 * (Yes I use arrow keys in vim whats the problem ;-; I'll maybe add hjkl later)
 		 */
 
 	var result = null;
